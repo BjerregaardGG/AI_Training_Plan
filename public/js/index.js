@@ -29,7 +29,7 @@ document.getElementById("niveau").addEventListener("change", function(){
 
 async function sendTrainingInfo(){
 
-    let url ="https://your-app.onrender.com/training_program";
+    let url ="https://ai-training-plan.onrender.com/training_program";
     const brugerData = JSON.parse(sessionStorage.getItem("trainingObject")); // converts to js object
 
     try {
