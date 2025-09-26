@@ -1,0 +1,167 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+p {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+/* BODY STYLING */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #212020;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* FORM WRAPPER */
+.form_wrapper {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+    max-width: 700px;
+    width: 100%;
+}
+
+.form_information {
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1.00rem;
+    font-weight: 500;
+    margin: 30px auto 10px;  /* auto giver lige meget margin i siderne */
+    color: #1f2937;
+    text-align: center;
+    max-width: 700px;        /* styr hvor bred teksten må blive */
+  }
+
+/* HEADINGS */
+h1 {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #1f2937;
+    text-align: center;
+}
+
+h2 {
+    font-size: 1.25rem;
+    font-weight: 500;
+    margin: 30px 0 10px;
+    color: #1f2937;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* FORM GROUP */
+.form_group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-weight: 600;
+    color: #4b5563;
+    margin-bottom: 6px;
+}
+
+.inputfield,
+.drop_down {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #d1d5db;
+    border-radius: 10px;
+    background-color: #f9fafb;
+    font-size: 16px;
+    transition: all 0.3s;
+}
+
+.inputfield:focus,
+.drop_down:focus {
+    border-color: #2563eb;
+    background-color: #fff;
+    outline: none;
+}
+
+/* SMALL TEXT */
+small.info_text {
+    display: block;
+    font-size: 0.85rem;
+    color: #6b7280;
+    margin-top: 6px;
+    font-style: italic;
+}
+
+/* BUTTON */
+button {
+    width: 35%;
+    padding: 14px;
+    background-color: #00c3ff;
+    color: #0c0b0b;
+    font-size: 16px;
+    border: none;
+    border-radius: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    margin: 20px auto;   /* 🔹 Top/bund = 20px, venstre/højre = auto */
+    display: block;      /* 🔹 Sørg for den fylder sin egen linje */
+    transition: background 0.3s;
+}
+
+#downloadBtn, #backToHome {
+    width: 49%;
+    padding: 14px;
+    background-color: #f5deb3;
+    color: #0c0b0b;
+    font-size: 16px;
+    border: none;
+    border-radius: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 30px;
+    transition: background 0.3s;
+}
+
+#downloadBtn:hover, #backToHome:hover {
+    background-color: #ace4fa ;
+
+}
+
+button:hover {
+    background-color: #ace4fa;
+}
+
+.symbol {
+    display: block;  /* Sikrer at billedet er på en ny linje */
+    margin: 20px auto;  /* Centrerer billedet horisontalt */
+    width: 100px;  /* Juster størrelsen på billedet */
+    height: auto;  /* Sørger for at forholdet mellem bredde og højde bevares */
+}
+
+.back-btn {
+    display: block;
+    margin: 30px auto 0;
+    padding: 12px 24px;
+    background-color: #00c3ff;
+    color: #0c0b0b;
+    font-size: 16px;
+    border: none;
+    border-radius: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s;
+    text-align: center;
+    text-decoration: none;
+    width: fit-content;
+}
+
+.back-btn:hover {
+    background-color: #ace4fa;
+}

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Forside</title>
+    <link rel="stylesheet" href="/css/index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+   
+<div class="form_wrapper">
+    <form method="POST" id="brugerform">
+
+        <h1>AI-Powered Personalized Fitness Program Generator</h1>
+
+        <div class="form_information">
+            <h4>Our revolutionary fitness platform harnesses the power of Google's latest <strong>Gemini AI model</strong> to create 
+                completely personalized workout programs tailored specifically to your unique needs, goals, and preferences. 
+
+                Take the first step toward your fitness transformation. Fill out the form below and let our AI create the
+                perfect workout program designed exclusively for you.
+            </h4>
+        </div>
+
+        <h2>User Information</h2>
+        <div class="form_group">
+            <label>Name</label>
+            <input type="text" name="name" class="inputfield" id="username" required>
+        </div>
+
+        <div class="form_group">
+            <label>Email</label>
+            <input type="text" name="email" class="inputfield" id="email" required>
+        </div>
+
+        <div class="form_group">
+            <label>Age</label>
+            <input type="text" name="age" class="inputfield" id="alder" required>
+        </div>
+
+        <div class="form_group">
+            <label>Height (cm)</label>
+            <input type="text" name="height" class="inputfield" id="height" placeholder="e.g.: 185" required>
+        </div>
+
+        <div class="form_group">
+            <label>Weight (kg)</label>
+            <input type="text" name="weight" class="inputfield" id="weight" placeholder="e.g.: 78" required>
+        </div>
+
+        <div class="form_group">
+            <label>Gender</label>
+            <select type="select" name="gender" class="drop_down" id="gender" required>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select>
+        </div>
+
+        <div class="form_group">
+            <label>Current Activity Level</label>
+            <select type="select" name="activity_level" class="drop_down" id="aktivitetsniveau" required>
+                <option value="Very sedentary">1 - Very sedentary</option>
+                <option value="Lightly active">2 - Lightly active</option>
+                <option value="Moderately active">3 - Moderately active</option>
+                <option value="Active">4 - Active</option>
+                <option value="Very active">5 - Very active</option>
+            </select>
+            <small id="aktiv_beskrivelse" class="info_text"></small>
+        </div>
+
+        <h2>Personal Goals & Preferences</h2>
+        <div class="form_group">
+            <p>Select the statement that describes you the best:</p>
+            <label>My goal with training is to achieve...</label>
+            <select type="select" name="goal" class="drop_down" id="mål" required>
+                <option value="endurance">... more endurance</option>
+                <option value="muscle_mass">... more muscle mass</option>
+                <option value="weight_loss">... a lower weight</option>
+                <option value="cardio">... better cardio</option>
+                <option value="health">... improved general health</option>
+            </select>
+        </div>
+
+        <div class="form_group">
+            <label>My current training level is...</label>
+            <select type="select" name="training_level" class="drop_down" id="niveau" required>
+                <option value="beginner">Beginner</option>
+                <option value="some_experience">Some experience</option>
+                <option value="experienced">Experienced</option>
+                <option value="advanced">Advanced</option>
+            </select>
+            <small id="niveau_beskrivelse" class="info_text"></small>
+        </div>
+
+        <div class="form_group">
+            <label>I have time to train...</label>
+            <select type="select" name="training_frequency" class="drop_down" id="niveau" required>
+                <option value="once a week">Once a week</option>
+                <option value="2-3 times a week">2-3 times a week</option>
+                <option value="3-5 times a week">3-5 times a week</option>
+                <option value="5+ times a week">5+ times a week</option>
+            </select>
+        </div>
+
+        <div class="form_group">
+            <label>My training sessions can last about...</label>
+            <select type="select" name="training_duration" class="drop_down" id="længde" required>
+                <option value="short">30–45 minutes</option>
+                <option value="medium">45–60 minutes</option>
+                <option value="long">+1 hour</option>
+            </select>
+        </div>
+
+        <h2>Health & Injuries</h2>
+        <div class="form_group">
+            <label>Please state any past or current injuries</label>
+            <input type="text" name="injuries" class="inputfield" placeholder="e.g.: knee injury" id="skader">
+        </div>
+
+        <div class="form_group">
+            <label>Please state any chronic illnesses</label>
+            <input type="text" name="illnesses" class="inputfield" placeholder="e.g.: asthma" id="sygdomme">
+        </div>
+
+        <div class="form_information">
+            <h4>Submit below and get your personal training program sent to your email
+            </h4>
+        </div>
+
+        <button type="submit">Submit</button>
+    </form>
+</div>
+
+<script src="/js/index.js"></script>
+</body>
+</html>
