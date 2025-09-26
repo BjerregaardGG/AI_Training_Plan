@@ -6,6 +6,7 @@ const app = express();
 app.use(express.json()); // appen gør brug af en biblioteks metode -> sets up body parsing 
 
 const N8N_URL = process.env.N8N_WEBHOOK_URL;
+const N8N_PROD_URL= process.env.N8N_PRODUCTION_URL;
 const N8N_KEY = process.env.N8N_SECRET_KEY;
 
 // sikkerhedsfeature --> 
@@ -39,7 +40,7 @@ app.post("/training_program", async (req, res) => {
 async function sendToN8n(user_data){
 
     try {
-        const response = await fetch(N8N_URL, {
+        const response = await fetch(N8N_PROD_URL, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
