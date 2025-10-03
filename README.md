@@ -2,8 +2,6 @@
 
 An intelligent fitness application that generates personalized workout plans using AI, powered by Google's Gemini model and automated through n8n workflows.
 
-![Workflow Overview](public/assets/training_program.png)
-
 ## 🎯 Overview
 
 This application collects user fitness data through a web form and automatically generates customized training programs tailored to individual goals, experience levels, and preferences. The entire process is automated using n8n workflows and delivers professionally formatted training plans directly to users' email.
@@ -20,43 +18,95 @@ This application collects user fitness data through a web form and automatically
 - **Vector Database Integration**: Stores and retrieves relevant training exercises using Qdrant
 
 ## 💪 Training Form 
-![AI Agent Workflow](public/assets/training_form)
 
-The application collects the following user data:
-Personal Information: Name, age, height, weight, gender
-Fitness Profile: Activity level, training goal, experience level
-Preferences: Training frequency, session duration, available equipment
-Health Considerations: Injuries, fitness level, special requirements
+![Training Form](public/assets/training_form.png)
 
+The user-friendly web form collects comprehensive fitness data to ensure the AI can generate the most relevant and effective training program. The form is designed to be intuitive and quick to complete, typically taking just 2-3 minutes.
+
+### Collected Data:
+
+**Personal Information**: 
+- Name, age, height, weight, gender
+- Used to calculate appropriate intensity levels and caloric recommendations
+
+**Fitness Profile**: 
+- Current activity level (sedentary to very active)
+- Primary training goal (weight loss, muscle gain, endurance, etc.)
+- Training experience level (beginner, intermediate, advanced)
+
+**Training Preferences**: 
+- Desired training frequency per week
+- Available session duration
+- Access to equipment (bodyweight, dumbbells, full gym, etc.)
+- Preferred training style
+
+**Health Considerations**: 
+- Current fitness level assessment
+- Any injuries or physical limitations
+- Special requirements or medical considerations
 
 ## 🏗️ Architecture
 
-The system consists of three main components:
+The workflow consists of three main components working seamlessly together:
 
-![AI Agent Workflow](public/assets/workflow.png)
+![Workflow Architecture](public/assets/workflow.png)
 
-### 1. AI Agent Workflow 
+### 1. AI Agent Workflow (Initial Generation)
 
-- Receives training form data via webhook
-- Processes user information and generates initial training program
-- Utilizes Google Gemini Chat Model for intelligent program creation
-- Integrates with Qdrant Vector Store for exercise database
-- Generates HTML-formatted workout plans with detailed instructions
+This is where the magic begins. The AI Agent receives your form data and creates your personalized program:
 
-### 2. Human-in-the-Loop Verification 
+- **Webhook Trigger**: Receives training form data in real-time when submitted
+- **Data Processing**: Validates and structures user information for AI processing
+- **AI Generation**: Google Gemini Chat Model analyzes your profile and generates a comprehensive training program
+- **Exercise Database**: Integrates with Qdrant Vector Store to retrieve the most relevant exercises based on your goals and equipment
+- **Program Formatting**: Generates a professionally formatted HTML email template with detailed exercise instructions, sets, reps, and progression guidelines
 
-- Optional manual review step
-- Allows human trainers to approve or modify AI-generated programs
-- Sends approval requests via Gmail
-- Waits for confirmation before proceeding
+### 2. Human-in-the-Loop Verification (Quality Control)
 
-### 3. Program Optimization Loop
+An optional but valuable step that ensures program quality:
 
-- Receives approved training program
-- Performs iterative refinement (up to 3 loops)
-- Uses Google Gemini Chat Model for optimization
-- Checks final approval before delivery
-- Sends completed program via email
+- **Manual Review**: Certified trainers can review AI-generated programs
+- **Quality Assurance**: Verify that exercises are appropriate for the user's level and goals
+- **Modifications**: Trainers can make adjustments if needed
+- **Approval Process**: Gmail notification sent to designated reviewer
+- **Conditional Flow**: Program only proceeds to optimization after approval
+
+### 3. Program Optimization Loop (Refinement)
+
+The final polish that makes your program truly exceptional:
+
+- **Iterative Enhancement**: Program goes through up to 3 refinement cycles
+- **AI Optimization**: Google Gemini analyzes and improves program structure, exercise selection, and progression
+- **Balance Check**: Ensures proper muscle group distribution and recovery time
+- **Progressive Overload**: Verifies that the program includes appropriate progression mechanisms
+- **Final Approval**: Last quality check before delivery
+- **Email Delivery**: Sends the completed, optimized program to your inbox
+
+## 📧 Your Personalized Training Program
+
+![Final Training Program](public/assets/training_program.png)
+
+### What You'll Receive:
+
+Once the workflow is complete, you'll receive a professionally formatted email containing:
+
+**Program Overview**:
+- Your personalized training goals
+- Weekly schedule breakdown
+- Equipment requirements
+- Estimated duration and intensity
+
+**Detailed Workout Plans**:
+- Day-by-day exercise routines
+- Exercise descriptions with proper form cues
+- Sets, reps, and rest periods
+- Progression guidelines for each week
+
+**Exercise Instructions**:
+- Step-by-step execution guides
+- Common mistakes to avoid
+- Modification options for different fitness levels
+- Video links or visual references (when available)
 
 ## 🛠️ Technology Stack
 
@@ -70,11 +120,36 @@ The system consists of three main components:
 
 ## 📋 Workflow Process
 
-1. User submits training form with personal data
-2. Webhook receives data and initiates workflow
-3. AI Agent generates personalized training program
-4. Program undergoes vector similarity search for relevant exercises
-5. (Optional) Human reviewer approves program
-6. Program enters optimization loop for refinement
-7. Final approval check
-8. Completed training program sent to user's email
+The complete journey from form submission to receiving your personalized program:
+
+1. **User submits training form** with personal data through the web interface
+2. **Webhook receives data** and initiates the n8n workflow instantly
+3. **AI Agent generates** personalized training program using Google Gemini
+4. **Vector database search** retrieves the most relevant exercises from Qdrant
+5. **(Optional) Human reviewer approves** program for quality assurance
+6. **Optimization loop** refines the program through iterative improvements (max 3 cycles)
+7. **Final approval check** ensures program meets all quality standards
+8. **Email delivery** sends the completed, professionally formatted program to your inbox
+
+**Typical Processing Time**: 2-5 minutes from form submission to email delivery (depending on whether human approval is enabled)
+
+## 🚀 Getting Started
+
+### For Users
+
+Simply visit [https://ai-training-plan.onrender.com/index.html](https://ai-training-plan.onrender.com/index.html) and fill out the training form. Your personalized program will be delivered to your email within minutes!
+
+### For Developers
+
+#### Prerequisites
+
+- n8n instance (self-hosted or cloud)
+- Google Cloud account with Gemini API access
+- Qdrant vector database instance
+- Gmail account for email delivery
+
+#### Setup
+
+1. Clone this repository:
+```bash
+git clone https://github.com/BjerregaardGG/AI_Training_Plan.git
