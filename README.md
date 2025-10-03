@@ -2,7 +2,7 @@
 
 An intelligent fitness application that generates personalized workout plans using AI, powered by Google's Gemini model and automated through n8n workflows.
 
-![Workflow Overview](assets/training_program.png)
+![Workflow Overview](/assets/training_program.png)
 
 ## 🎯 Overview
 
