@@ -25,7 +25,7 @@ The system consists of three main components:
 
 ### 1. AI Agent Workflow 
 
-![AI Agent Workflow](assets/workflow.png)
+![AI Agent Workflow](public/assets/workflow.png)
 
 - Receives training form data via webhook
 - Processes user information and generates initial training program
