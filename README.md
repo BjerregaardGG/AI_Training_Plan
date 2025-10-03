@@ -19,13 +19,23 @@ This application collects user fitness data through a web form and automatically
 - **Iterative Optimization**: Built-in loop mechanism for continuous program refinement
 - **Vector Database Integration**: Stores and retrieves relevant training exercises using Qdrant
 
+## 💪 Training Form 
+![AI Agent Workflow](public/assets/training_form)
+
+The application collects the following user data:
+Personal Information: Name, age, height, weight, gender
+Fitness Profile: Activity level, training goal, experience level
+Preferences: Training frequency, session duration, available equipment
+Health Considerations: Injuries, fitness level, special requirements
+
+
 ## 🏗️ Architecture
 
 The system consists of three main components:
 
-### 1. AI Agent Workflow 
-
 ![AI Agent Workflow](public/assets/workflow.png)
+
+### 1. AI Agent Workflow 
 
 - Receives training form data via webhook
 - Processes user information and generates initial training program
