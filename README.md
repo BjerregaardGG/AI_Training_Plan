@@ -139,17 +139,3 @@ The complete journey from form submission to receiving your personalized program
 
 Simply visit [https://ai-training-plan.onrender.com/index.html](https://ai-training-plan.onrender.com/index.html) and fill out the training form. Your personalized program will be delivered to your email within minutes!
 
-### For Developers
-
-#### Prerequisites
-
-- n8n instance (self-hosted or cloud)
-- Google Cloud account with Gemini API access
-- Qdrant vector database instance
-- Gmail account for email delivery
-
-#### Setup
-
-1. Clone this repository:
-```bash
-git clone https://github.com/BjerregaardGG/AI_Training_Plan.git
